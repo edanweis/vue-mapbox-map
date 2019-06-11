@@ -157,6 +157,19 @@ export default {
       // return the map for reference from parent component
       this.map.on('load', () => { this.$emit('mapbox-ready', this.map) })
       this.map.on('remove', () => { this.$emit('mapbox-destroyed') })
+
+      this.map.on('drag', () => { this.$emit('mapbox-drag', this.map) })
+      this.map.on('init', () => {this.$emit('mapbox-init')})
+      this.map.on('click', () => {this.$emit('mapbox-click')})
+      this.map.on('zoom', () => {this.$emit('mapbox-zoom')})
+      this.map.on('move', () => {this.$emit('mapbox-move')})
+      this.map.on('moveend', () => {this.$emit('mapbox-moveend')})
+      this.map.on('movestart', () => {this.$emit('mapbox-movestart')})
+      this.map.on('load', () => {this.$emit('mapbox-load')})
+      this.map.on('styledataloading', () => {this.$emit('mapbox-styledataloading')})
+      this.map.on('touchend', () => {this.$emit('mapbox-touchend')})
+      this.map.on('touchstart', () => {this.$emit('mapbox-touchstart')})
+      this.map.on('dblclick', () => {this.$emit('mapbox-dblclick')})
     }
   }
 }
